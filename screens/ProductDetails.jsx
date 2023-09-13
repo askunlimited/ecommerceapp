@@ -37,15 +37,15 @@ const ProductDetails = ({ navigation }) => {
       </View>
       <Image
         source={{
-          uri: 'https://images.unsplash.com/photo-1664575602276-acd073f104c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+          uri: item.imageUrl,
         }}
         style={styles.image}
       />
       <View style={styles.details}>
         <View style={styles.titleRow}>
-          <Text style={styles.title}>Product</Text>
+          <Text style={styles.title}>{item.title}</Text>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>$6.99</Text>
+            <Text style={styles.price}>${item.price}</Text>
           </View>
         </View>
         <View style={styles.ratingRow}>
@@ -68,19 +68,14 @@ const ProductDetails = ({ navigation }) => {
         <View style={styles.descriptionWrapper}>
           <Text style={styles.description}>Description</Text>
           <Text style={styles.descText}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem
-            quos eius minima sapiente, asperiores voluptatum alias laboriosam
-            accusamus obcaecati temporibus minus nisi! Omnis adipisci suscipit
-            ipsa odio alias inventore nulla ducimus dolorum facilis. Corporis
-            sint maxime explicabo porro deleniti esse, debitis et laborum
-            architecto quos officia possimus facilis, minima eligendi?
+            {item.description}
           </Text>
         </View>
         <View style={{ marginBottom: SIZES.small }}>
           <View style={styles.locations}>
             <View style={{ flexDirection: 'row' }}>
               <Ionicons name='location-outline' size={20} />
-              <Text> Locations</Text>
+              <Text> {item.product_location}</Text>
             </View>
             <View style={{ flexDirection: 'row' }}>
               <MaterialCommunityIcons name='truck-delivery-outline' size={20} />
